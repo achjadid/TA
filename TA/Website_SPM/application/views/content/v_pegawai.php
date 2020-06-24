@@ -6,10 +6,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard
+        Employee
       </h1>
       <ol class="breadcrumb">
-        <li><a href="<?php echo base_url();?>"><i class="fa fa-dashboard"></i>Monitoring</a></li>
+        <li><a href="<?php echo base_url();?>activity"><i class="fa fa-dashboard"></i>Activity</a></li>
       </ol>
     </section>
 
@@ -19,28 +19,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Monitoring</h3>
+              <h3>Employee List</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive">
-              <table id="tPengguna" class="table table-bordered table-striped table-hover" style="width: 100%;">
+              <table id="tEmployee" class="table table-striped table-hover">
                 <thead>
                 <tr>
                   <th class="col-md-1" style="text-align:center">No</th>
-                  <th class="col-md-7" style="text-align:center">Username</th>
-                  <th class="col-md-2" style="text-align:center">Nama</th>
-                  <th class="col-md-2" style="text-align:center">Email</th>
+                  <th class="col-md-1">NIP</th>
+                  <th class="col-md-7">Nama</th>
+                  <th class="col-md-3">Email</th>
                 </tr>
                 </thead>
                 <tbody>
                   <?php
-                    foreach($tPengguna as $pgn){
+                    foreach($tEmployee as $emp){
                       echo '
                           <tr>
                             <td style="text-align:center; vertical-align:middle;"></td>
-                            <td style="vertical-align:middle">'.$pgn->p_username.'</td>
-                            <td style="vertical-align:middle">'.$pgn->p_name.'</td>
-                            <td style="vertical-align:middle">'.$pgn->p_email.'</td>
+                            <td style="vertical-align:middle"><a href="'.base_url('employee/detail/'.$emp->p_id).'">'.$emp->p_nip.'</a></td>
+                            <td style="vertical-align:middle"><a href="'.base_url('employee/detail/'.$emp->p_id).'">'.$emp->p_name.'</a></td>
+                            <td style="vertical-align:middle;">'.$emp->p_email.'</td>
                           </tr>
                       ';
                     }

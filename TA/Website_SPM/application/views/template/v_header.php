@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SAM</title>
+  <title>SPM</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -33,6 +33,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link rel="stylesheet" href="<?php echo config_item('assets_plugins');?>bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <!-- DataTables -->
   <link rel="stylesheet" href="<?php echo config_item('assets_bower');?>datatables.net-bs/css/dataTables.bootstrap.min.css">
+
+  <!-- Select2 -->
+  <link rel="stylesheet" href="<?php echo config_item('assets_bower');?>select2/dist/css/select2.min.css">
+
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -60,9 +64,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- Logo -->
     <a href="<?php echo base_url();?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>SAM</b></span>
+      <span class="logo-mini"><b>SPM</b></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><label>SAM</label></span>
+      <span class="logo-lg"><label>SPM</label></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -134,24 +138,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </a>
         </li>
         <?php
+          if($roleid == '1'){
+          ?>
+        <li>
+          <a href="<?php echo config_item('base_url');?>activity">
+            <i class="fa fa-history"></i> <span>Activity</span>
+          </a>
+        </li>
+        <!-- <li>
+          <a href="<?php echo config_item('base_url');?>employee">
+            <i class="fa fa-users"></i> <span>Employee</span>
+          </a>
+        </li> -->
+        <?php } ?>
+        <?php
           if($roleid == '2'){
           ?>
         <li>
           <a href="<?php echo config_item('base_url');?>history">
-            <i class="fa fa-check"></i> <span>History Absensi</span>
+            <i class="fa fa-history"></i> <span>Presensi History</span>
           </a>
         </li>
+        <?php } ?>
         <li>
-          <a href="<?php echo config_item('base_url');?>editprofile">
-            <i class="fa fa-cogs"></i> <span>Edit Profile</span>
+          <a href="<?php echo config_item('base_url');?>device">
+            <i class="fa fa-laptop"></i> <span>Device</span>
           </a>
         </li>
-        <li>
-          <a href="<?php echo config_item('base_url');?>adddevice">
-            <i class="fa fa-laptop"></i> <span>Add Device</span>
-          </a>
-        </li>
-      <?php } ?>
       </ul>
     </section>
     <!-- /.sidebar -->

@@ -42,7 +42,7 @@ class Login extends CI_Controller{
 			redirect(base_url("dashboard"));
 
 		}else{
-			$this->session->set_flashdata('failed_login', 'Username atau Password Salah!');
+			$this->session->set_flashdata('failed_login', 'Incorrect username or password');
 			redirect(base_url('login'));
 		}
 	}
